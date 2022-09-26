@@ -356,6 +356,7 @@ export interface VariableDeclaration extends DeclarationBase, HasDecorators {
   type: "VariableDeclaration";
   declarations: VariableDeclarator[];
   kind: "var" | "let" | "const";
+  generator?: boolean;
 }
 
 export interface VariableDeclarator extends NodeBase {

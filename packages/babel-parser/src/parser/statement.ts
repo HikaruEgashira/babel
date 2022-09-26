@@ -282,7 +282,10 @@ export default abstract class StatementParser extends ExpressionParser {
    * @memberof StatementParser
    */
   isLetKeyword(context?: string | null): boolean {
-    const next = this.nextTokenStart();
+    const generator = this.lookahead().type === tt.star;
+    const next = generator
+      ? this.nextTokenStartSince(this.lookahead().pos)
+      : this.nextTokenStart();
     const nextCh = this.codePointAtPos(next);
     // For ambiguous cases, determine if a LexicalDeclaration (or only a
     // Statement) is allowed here. If context is not empty then only a Statement
@@ -347,6 +350,7 @@ export default abstract class StatementParser extends ExpressionParser {
       starttype = tt._var;
       kind = "let";
     }
+    // console.log(starttype, this.state.type, this.state);
 
     // Most types of statements are recognized by the keyword they
     // start with. Many are trivial to parse, some require a bit of
@@ -1312,6 +1316,7 @@ export default abstract class StatementParser extends ExpressionParser {
   ): Undone<N.VariableDeclaration> {
     const declarations: N.VariableDeclarator[] = (node.declarations = []);
     node.kind = kind;
+    node.generator = this.eat(tt.star);
     for (;;) {
       const decl = this.startNode<N.VariableDeclarator>();
       this.parseVarId(decl, kind);

@@ -1158,6 +1158,10 @@ defineType("VariableDeclaration", {
         assertEach(assertNodeType("VariableDeclarator")),
       ),
     },
+    generator: {
+      validate: assertValueType("boolean"),
+      optional: true,
+    },
   },
   validate(parent, key, node) {
     if (!process.env.BABEL_TYPES_8_BREAKING) return;

@@ -690,6 +690,7 @@ export interface VariableDeclaration extends BaseNode {
   kind: "var" | "let" | "const";
   declarations: Array<VariableDeclarator>;
   declare?: boolean | null;
+  generator?: boolean | null;
 }
 
 export interface VariableDeclarator extends BaseNode {
