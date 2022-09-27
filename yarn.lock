@@ -3314,6 +3314,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@babel/plugin-transform-variable-generator@workspace:packages/babel-plugin-transform-variable-generator":
+  version: 0.0.0-use.local
+  resolution: "@babel/plugin-transform-variable-generator@workspace:packages/babel-plugin-transform-variable-generator"
+  dependencies:
+    "@babel/core": "workspace:^"
+    "@babel/helper-plugin-utils": "workspace:^"
+    "@babel/plugin-syntax-do-expressions": "workspace:^"
+  peerDependencies:
+    "@babel/core": ^7.0.0-0
+  languageName: unknown
+  linkType: soft
+
 "@babel/preset-env@npm:^7.18.10":
   version: 7.18.10
   resolution: "@babel/preset-env@npm:7.18.10"

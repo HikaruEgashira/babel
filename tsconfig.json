@@ -141,6 +141,7 @@
     "./packages/babel-plugin-transform-typescript/src/**/*.ts",
     "./packages/babel-plugin-transform-unicode-escapes/src/**/*.ts",
     "./packages/babel-plugin-transform-unicode-regex/src/**/*.ts",
+    "./packages/babel-plugin-transform-variable-generator/src/**/*.ts",
     "./packages/babel-preset-env/src/**/*.ts",
     "./packages/babel-preset-flow/src/**/*.ts",
     "./packages/babel-preset-react/src/**/*.ts",
@@ -589,6 +590,9 @@
       ],
       "@babel/plugin-transform-unicode-regex": [
         "./packages/babel-plugin-transform-unicode-regex/src"
+      ],
+      "@babel/plugin-transform-variable-generator": [
+        "./packages/babel-plugin-transform-variable-generator/src"
       ],
       "@babel/preset-env": [
         "./packages/babel-preset-env/src"
